@@ -1,0 +1,400 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+/* Default site font */
+body {
+    min-height: 100vh;
+    background-color: #e2e5e9;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #1c008e;
+    padding: 15px 0;
+}
+
+/* NAVBAR FONT */
+.navbar,
+.navbar a {
+    font-family: "Segoe UI", Arial, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* FOOTER FONT */
+.footer,
+.footer p,
+.footer span {
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu .active a {
+    color: #fccc33;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* HERO */
+.hero {
+    height: 30vh;
+    background: url("./Assets/Images/Header.png") center/cover no-repeat;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+}
+
+.hero-content p {
+    font-size: 18px;
+}
+
+.calculator-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 80px 0;
+}
+
+.calculator-container {
+    display: inline-block;
+    width:100%;
+    max-width:320px;
+    padding: 10px 20px 20px;
+    border-radius: 15px;
+    background-color: #ffffff;
+}
+
+.site-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.calculator-page {
+    min-height: calc(100vh - 30vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display {
+    height: 80px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    text-align: right;
+    margin-top: 10px;   
+    margin-bottom: 10px;
+    font-size: 25px;
+    pointer-events: auto;
+    background-color: rgb(221, 221, 221);
+}
+
+.head-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head-row .brand {
+    font-family: "Orbitron", sans-serif;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin-top: 10px;
+    word-spacing: 1%;
+}
+
+.head-row .toggle {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.cal_btn {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.cal_btn .oprtr {
+    background-color: orange;
+}
+
+.oprtr {
+
+    color: white;
+}
+
+.cal_btn button {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #d8d8d8;
+    cursor: crosshair;
+    font-size: 20px;
+}
+
+.cal_btn button:active {
+    transform: scale(0.99);
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    color: #2a2e3a;
+}
+
+footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* =========================
+   DARK MODE (FIXED)
+========================= */
+
+body.dark-mode {
+    background-color: #1e222a;   /* page background */
+    color: #e5e9f0;
+}
+
+/* Calculator container */
+body.dark-mode .calculator-container,
+body.dark-mode .container {
+    background-color: #2a2f3a;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 12px 30px;
+}
+
+/* Display */
+body.dark-mode .display {
+    background-color: #1f2430;
+    color: #e5e9f0;
+    box-shadow: inset 0 0 0 1px #3b4252;
+}
+
+/* Number buttons */
+body.dark-mode .cal_btn button {
+    background-color: #3b4252;
+    color: #e5e9f0;
+}
+
+/* Operator buttons */
+body.dark-mode .cal_btn .oprtr {
+    background-color: #d08770;   /* soft orange */
+    color: #1e222a;
+}
+
+/* Button hover / press */
+body.dark-mode .cal_btn button:active {
+    transform: scale(0.97);
+}
+
+/* Calculator fonts only */
+.calculator-container,
+.calculator-container * {
+    font-family: 'Bitcount Prop Single', sans-serif;
+}
+
+/* Brand text */
+.head-row .brand {
+    font-family: "Orbitron", sans-serif;
+}
+
+/* Toggle icon */
+body.dark-mode .toggle i {
+    color: #88c0d0;
+}
+
+/* DARK MODE TOGGLE BUTTON */
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: #444;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .theme-toggle {
+    color: #88c0d0;
+}
+
+/* Footer */
+body.dark-mode .footer {
+    background: linear-gradient(to right, #0b132b, #1c2541);
+    color: #cbd5e1;
+}
+
+body.dark-mode .powered span {
+    color: #ffffff;
+}
+
+/* FOOTER */
+.footer {
+    background: linear-gradient(to right, #061433, #030f23);
+    color: #999999;
+    padding: 18px 60px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.powered {
+    color: #999999;
+}
+
+.powered span {
+    font-weight: bold;
+    color: #fff;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Tablets (≤1024px) */
+@media (max-width: 1024px){
+
+.nav-menu{
+gap:25px;
+}
+
+.hero{
+height:25vh;
+}
+
+.calculator-container{
+max-width:320px;
+}
+
+}
+
+/* Mobile Devices (≤768px) */
+@media (max-width:768px){
+
+/* Navbar becomes stacked */
+.nav-menu{
+flex-direction:column;
+align-items:center;
+gap:15px;
+}
+
+/* Smaller hero section */
+.hero{
+height:22vh;
+}
+
+/* Calculator adjustments */
+.calculator-container{
+width:90%;
+max-width:320px;
+padding:15px;
+}
+
+/* Display smaller */
+.display{
+height:70px;
+font-size:22px;
+}
+
+/* Buttons slightly smaller */
+.cal_btn button{
+font-size:18px;
+padding:8px;
+}
+
+}
+
+/* Small Phones (≤480px) */
+@media (max-width:480px){
+
+.hero{
+height:18vh;
+}
+
+/* Brand text smaller */
+.head-row .brand{
+font-size:16px;
+}
+
+/* Toggle icon smaller */
+.theme-toggle{
+font-size:22px;
+}
+
+/* Calculator */
+.calculator-container{
+width:95%;
+max-width:280px;
+}
+
+/* Display */
+.display{
+height:60px;
+font-size:20px;
+}
+
+/* Buttons */
+.cal_btn button{
+font-size:16px;
+padding:6px;
+}
+
+/* Footer text smaller */
+.footer{
+font-size:11px;
+padding:15px 10px;
+}
+
+}

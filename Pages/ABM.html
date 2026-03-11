@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ABM</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="abm-page">
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+    </div>
+</section>
+
+        <!-- Navigation -->
+        <nav class="navbar" aria-label="Main Navigation">
+            <ul class="nav-menu">
+                <li><a href="../index.html">HOME</a></li>
+                <li ><a href="../Pages/LCBA.html">ABOUT LCBA</a></li>
+                <li class="active"><a href="../Pages/ABM.html">ABOUT ABM</a></li>
+                <li><a href="../Pages/image.html">IMAGE GALLERY</a></li>
+                <li><a href="../Pages/Video.html">VIDEO GALLERY</a></li>
+                <li><a href="../Game/Game.html">GAMES</a></li>
+            </ul>
+        </nav>
+
+<!-- FOUNDER SECTION -->
+<section class="founder-section">
+    <div class="founder-container">
+
+        <!-- LEFT: Founder Text -->
+        <div class="founder-text">
+    <h2>Accountancy, Business, and Management (ABM)</h2>
+    <p style="text-align: justify;">
+        ABM, which stands for Accountancy, Business, and Management, is one of LCBA’s Senior High School (SHS) programs offered under the Academic Track.
+        The Accountancy, Business, and Management (ABM) Strand equips students with essential knowledge and skills in business, finance, and entrepreneurship.
+        It helps learners develop strong leadership, decision-making, and management abilities, preparing them for future careers in accounting, business administration, marketing, banking, and other business-related fields.	
+    </p>
+</div>
+
+</section>
+
+<!-- CORE VALUES -->
+<section class="section container">
+    <h2>This strand is best for students who are interested in:</h2>
+
+    <div class="values-grid">
+<div class="value">
+    <h4>Business and entrepreneurship</h4>
+</div>
+<div class="value">
+    <h4>Accounting and finance</h4>
+</div>
+
+<div class="value">
+    <h4>Marketing and management</h4>
+</div>
+
+<div class="value">
+    <h4>Economics and<br>corporate operations</h4>
+</div>
+    </div>
+</section>
+
+<!-- QUALITY OBJECTIVES -->
+<section class="section light2">
+    <div class="container">
+        <div class="QO">
+        <h2>What You Learn in ABM</h2>
+        </div>
+        <ul class="objectives">
+            <li>Fundamentals of Accounting, Business, and Management</li>
+            <li>Business Mathematics</li>
+            <li>Applied Economics</li>
+            <li>Principles of Marketing</li>
+            <li>Business Ethics and Social Responsibility</li>
+            <li>Entrepreneurship</li>
+        </ul>
+    </div>
+</section>
+
+</section>
+
+<!-- CORE VALUES -->
+<section class="section container core-values-3x3">
+    <h2>Possible College Courses After ABM</h2>
+        <div class="core-values-text">
+        <p>ABM is a great foundation if you plan to take:</p>
+    </div>
+
+    <div class="values-grid">
+<div class="value">
+    <h4>Accountancy</h4>
+</div>
+<div class="value">
+    <h4>Business Administration</h4>
+</div>
+
+<div class="value">
+    <h4>Financial Management</h4>
+</div>
+
+<div class="value">
+    <h4>Marketing Management</h4>
+</div>
+
+<div class="value">
+    <h4>Entrepreneurship</h4>
+</div>
+
+<div class="value">
+    <h4>Economics</h4>
+</div>
+    </div>
+</section>
+
+<!-- CORE VALUES -->
+<section class="section container core-values-3x3 careers-row">
+    <h2>Future Careers</h2>
+        <div class="core-values-text">
+        <p>ABM students often pursue careers such as:</p>
+    </div>
+
+    <div class="values-grid">
+        <div class="value"><h4>Accountant</h4></div>
+        <div class="value"><h4>Business owner / Entrepreneur</h4></div>
+        <div class="value"><h4>Marketing officer</h4></div>
+        <div class="value"><h4>Bank or finance employee</h4></div>
+        <div class="value"><h4>Manager or corporate professional</h4></div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+        <div class="footer-content">
+            <p>© 2026 LAGUNA COLLEGE OF BUSINESS AND ARTS</p>
+            <p class="powered">
+                Powered By: <span>Dice Delle Andrei C. Alvarez & John Ronelle R. Punzalan</span>
+            </p>
+            <br>
+            <p class="powered">Smart: <span>0961-074-5530</span></p>
+            <p class="powered">Gmail: <span>info@lcba.edu.ph</span></p>
+            <p class="powered">Address: <span>P.Burgos St., Calamba City, Laguna, 4027</span></p>
+        </div>
+        </div>
+    </footer>
+
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+    reveals.forEach(reveal => {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveal.getBoundingClientRect().top;
+        const revealPoint = 100;
+
+        if (revealTop < windowHeight - revealPoint) {
+            reveal.classList.add("active");
+        }
+    });
+});
+</script>
+
+</body>
+</html>

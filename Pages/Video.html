@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Video Gallery</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="video-page">
+
+    <!-- HERO -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+    </div>
+</section>
+
+        <!-- Navigation -->
+        <nav class="navbar" aria-label="Main Navigation">
+            <ul class="nav-menu">
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../Pages/LCBA.html">ABOUT LCBA</a></li>
+                <li><a href="../Pages/ABM.html">ABOUT ABM</a></li>
+                <li><a href="../Pages/image.html">IMAGE GALLERY</a></li>
+                <li class="active"><a href="../Pages/Video.html">VIDEO GALLERY</a></li>
+                <li><a href="../Game/Game.html">GAMES</a></li>
+            </ul>
+        </nav>
+
+  <section class="interactive-layout">
+    <button class="nav-btn prev" aria-label="Previous">&#10094;</button>
+
+    <div class="viewport">
+      <div class="track">
+
+        <article class="slide active">
+          <video src="../Assets/Videos/PRODUCTIVITY 1.mp4" muted controls></video>
+        </article>
+
+        <article class="slide">
+          <video src="../Assets/Videos/PRODUCTIVITY 2.mp4" muted controls></video>
+        </article>
+
+      </div>
+    </div>
+
+    <button class="nav-btn next" aria-label="Next">&#10095;</button>
+  </section>
+
+<!-- FOOTER -->
+<footer class="footer">
+        <div class="footer-content">
+            <p>© 2026 LAGUNA COLLEGE OF BUSINESS AND ARTS</p>
+            <p class="powered">
+                Powered By: <span>Dice Delle Andrei C. Alvarez & John Ronelle R. Punzalan</span>
+            </p>
+            <br>
+            <p class="powered">Smart: <span>0961-074-5530</span></p>
+            <p class="powered">Gmail: <span>info@lcba.edu.ph</span></p>
+            <p class="powered">Address: <span>P.Burgos St., Calamba City, Laguna, 4027</span></p>
+        </div>
+        </div>
+    </footer>
+
+  <script>
+    const track = document.querySelector('.track');
+    const slides = document.querySelectorAll('.slide');
+    const videos = document.querySelectorAll('video');
+    let index = 0;
+
+    function updateSlide() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+
+      videos.forEach((video, i) => {
+        video.pause();
+        video.currentTime = 0;
+        if (i === index) video.play();
+      });
+    }
+
+    document.querySelector('.next').onclick = () => {
+      index = (index + 1) % slides.length;
+      updateSlide();
+    };
+
+    document.querySelector('.prev').onclick = () => {
+      index = (index - 1 + slides.length) % slides.length;
+      updateSlide();
+    };
+
+    // Auto-play first video
+    videos[0].play();
+  </script>

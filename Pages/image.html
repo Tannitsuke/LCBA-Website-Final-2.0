@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="image-page">
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+    </div>
+</section>
+
+        <!-- Navigation -->
+        <nav class="navbar" aria-label="Main Navigation">
+            <ul class="nav-menu">
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../Pages/LCBA.html">ABOUT LCBA</a></li>
+                <li><a href="../Pages/ABM.html">ABOUT ABM</a></li>
+                <li class="active"><a href="../Pages/image.html">IMAGE GALLERY</a></li>
+                <li><a href="../Pages/Video.html">VIDEO GALLERY</a></li>
+                <li><a href="../Game/Game.html">GAMES</a></li>
+            </ul>
+        </nav>
+
+<section class="gallery-section">
+  <h2>Image Gallery</h2>
+
+  <div class="gallery-grid">
+<div class="gallery-card">
+  <img src="../Assets/Images/img1.jpg" alt="ABM Activity" class="gallery-img">
+</div>
+
+    <div class="gallery-card">
+      <img src="../Assets/Images/img2.jpg" alt="ABM Activity" class="gallery-img">
+    </div>
+
+    <div class="gallery-card">
+      <img src="../Assets/Images/img3.jpg" alt="ABM Activity" class="gallery-img">
+    </div>
+
+    <div class="gallery-card">
+      <img src="../Assets/Images/img4.jpg" alt="ABM Activity" class="gallery-img">
+    </div>
+
+    <div class="gallery-card">
+      <img src="../Assets/Images/img5.jpg" alt="ABM Activity" class="gallery-img">
+    </div>
+
+    <div class="gallery-card">
+      <img src="../Assets/Images/img6.jpg" alt="ABM Activity" class="gallery-img">
+    </div>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+        <div class="footer-content">
+            <p>© 2026 LAGUNA COLLEGE OF BUSINESS AND ARTS</p>
+            <p class="powered">
+                Powered By: <span>Dice Delle Andrei C. Alvarez & John Ronelle R. Punzalan</span>
+            </p>
+            <br>
+            <p class="powered">Smart: <span>0961-074-5530</span></p>
+            <p class="powered">Gmail: <span>info@lcba.edu.ph</span></p>
+            <p class="powered">Address: <span>P.Burgos St., Calamba City, Laguna, 4027</span></p>
+        </div>
+        </div>
+    </footer>
+
+<!-- FULLSCREEN MODAL -->
+<div class="image-modal" id="imageModal">
+  <span class="modal-close" id="modalClose">&times;</span>
+
+  <img class="modal-img" id="modalImg" alt="Full view">
+
+  <button class="modal-nav prev" id="prevBtn">&#10094;</button>
+  <button class="modal-nav next" id="nextBtn">&#10095;</button>
+</div>
+
+<script>
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.getElementById("modalClose");
+const cards = document.querySelectorAll(".gallery-card");
+const images = document.querySelectorAll(".gallery-img"); // ✅ RESTORED
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+let currentIndex = 0;
+
+/* =========================
+   OPEN MODAL
+========================= */
+cards.forEach((card, index) => {
+  card.addEventListener("click", () => {
+    modal.classList.add("active");
+    modalImg.src = images[index].src; // ✅ SAFE
+    currentIndex = index;
+    document.body.style.overflow = "hidden";
+  });
+});
+
+/* =========================
+   CLOSE MODAL
+========================= */
+closeBtn.addEventListener("click", closeModal);
+
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) closeModal();
+});
+
+function closeModal() {
+  modal.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+/* =========================
+   SLIDER CONTROLS
+========================= */
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  modalImg.src = images[currentIndex].src;
+});
+
+prevBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  modalImg.src = images[currentIndex].src;
+});
+
+/* =========================
+   KEYBOARD SUPPORT
+========================= */
+document.addEventListener("keydown", (e) => {
+  if (!modal.classList.contains("active")) return;
+
+  if (e.key === "Escape") closeModal();
+  if (e.key === "ArrowRight") nextBtn.click();
+  if (e.key === "ArrowLeft") prevBtn.click();
+});
+</script>
+
+
+</body>
+</html>

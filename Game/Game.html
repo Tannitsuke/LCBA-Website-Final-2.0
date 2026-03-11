@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ABM SmartCalc</title>
+    <link rel="stylesheet" href="../style.css">
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+</head>
+
+    <body>
+        
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content site-container"></div>
+</section>
+
+<!-- NAVIGATION -->
+<nav class="navbar" aria-label="Main Navigation">
+    <ul class="nav-menu">
+        <li><a href="../index.html">HOME</a></li>
+        <li><a href="../Pages/LCBA.html">ABOUT LCBA</a></li>
+        <li><a href="../Pages/ABM.html">ABOUT ABM</a></li>
+        <li><a href="../Pages/image.html">IMAGE GALLERY</a></li>
+        <li><a href="../Pages/Video.html">VIDEO GALLERY</a></li>
+        <li class="active"><a href="../Game/Game.html">GAMES</a></li>
+    </ul>
+</nav>
+
+<!-- CALCULATOR -->
+<div class="calculator-page">
+    <div class="calculator-container">
+
+<div class="head-row">
+    <span class="brand">ABM SmartCalc</span>
+
+    <button class="theme-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+        <i id="toggle-icon" class="fa-solid fa-toggle-off"></i>
+    </button>
+</div>
+
+        <input type="text" class="display" readonly>
+
+        <div class="cal_btn">
+            <button class="oprtr" data-value="AC">AC</button>
+            <button class="oprtr" data-value="DEL">DEL</button>
+            <button class="oprtr" data-value="%">%</button>
+            <button class="oprtr" data-value="/">/</button>
+
+            <button class="nmbr" data-value="7">7</button>
+            <button class="nmbr" data-value="8">8</button>
+            <button class="nmbr" data-value="9">9</button>
+            <button class="oprtr" data-value="×">×</button>
+
+            <button class="nmbr" data-value="4">4</button>
+            <button class="nmbr" data-value="5">5</button>
+            <button class="nmbr" data-value="6">6</button>
+            <button class="oprtr" data-value="-">-</button>
+
+            <button class="nmbr" data-value="1">1</button>
+            <button class="nmbr" data-value="2">2</button>
+            <button class="nmbr" data-value="3">3</button>
+            <button class="oprtr" data-value="+">+</button>
+
+            <button class="nmbr" data-value="0">0</button>
+            <button class="nmbr" data-value="00">00</button>
+            <button class="nmbr" data-value=".">.</button>
+            <button class="oprtr" data-value="=">=</button>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+        <div class="footer-content">
+            <p>© 2026 LAGUNA COLLEGE OF BUSINESS AND ARTS</p>
+            <p class="powered">
+                Powered By: <span>Dice Delle Andrei C. Alvarez & John Ronelle R. Punzalan</span>
+            </p>
+            <br>
+            <p class="powered">Smart: <span>0961-074-5530</span></p>
+            <p class="powered">Gmail: <span>info@lcba.edu.ph</span></p>
+            <p class="powered">Address: <span>P.Burgos St., Calamba City, Laguna, 4027</span></p>
+        </div>
+    </footer>
+
+<script>
+    const display = document.querySelector(".display");
+const buttons = document.querySelectorAll(".cal_btn button");
+const specialChars = ["%", "×", "/", "-", "+", "="];
+let justEvaluated = false;
+let output = "";
+
+const calculate = (btnValue) => {
+    if (btnValue === "=" && output !== "") {
+        try {
+            output = eval(
+                output
+                    .replace(/×/g, "*")
+                    .replace(/%/g, "/100")
+            ).toString();
+            justEvaluated = true;
+        } catch (error) {
+            output = "Error";
+            justEvaluated = true;
+        }
+    } else if (btnValue === "AC") {
+        output = "";
+        justEvaluated = false;
+    } else if (btnValue === "DEL") {
+        output = output.toString().slice(0, -1);
+        justEvaluated = false;
+    } else {
+        if (justEvaluated && !specialChars.includes(btnValue)) {
+            output = "";
+        }
+        justEvaluated = false;
+        if (output === "" && specialChars.includes(btnValue)) return;
+        output += btnValue;
+    }
+    display.value = output;
+}
+
+buttons.forEach((button) => {
+    button.addEventListener("click", (e) => calculate(e.target.dataset.value));
+});
+
+function toggleDarkMode() {
+    const body = document.body;
+    const icon = document.getElementById("toggle-icon");
+
+    body.classList.toggle("dark-mode");
+
+    const isDark = body.classList.contains("dark-mode");
+
+if (isDark) {
+    icon.classList.remove("fa-toggle-off");
+    icon.classList.add("fa-toggle-on");
+} else {
+    icon.classList.remove("fa-toggle-on");
+    icon.classList.add("fa-toggle-off");
+}
+
+    localStorage.setItem("darkMode", isDark);
+}
+
+/* Restore mode on reload */
+window.addEventListener("load", () => {
+    const isDark = localStorage.getItem("darkMode") === "true";
+    if (isDark) toggleDarkMode();
+});
+</script>
+
+    </body>
+</html>
+
+

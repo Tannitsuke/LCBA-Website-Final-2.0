@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Main Page</title>
+<link rel="stylesheet" href="./style.css">
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body class="home-page">
+
+    <!-- ================= HEADER ================= -->
+    <header>
+
+        <!-- Top Bar -->
+        <div class="top-bar">
+
+            <!-- Logo -->
+            <div class="logo-section">
+                <a href="index.html" class="logo-link">
+                    <img src="./Assets/Images/Logo.png" alt="LCBA Logo">
+                    <span class="logo-text">LCBA</span>
+                </a>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact-section">
+
+                <div class="contact-item" onclick="callNumber()">
+                    <i class="fas fa-phone"></i>
+                    <span>SMART: 0961-074-5530</span>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="contact-item" onclick="sendEmail()">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@lcba.edu.ph</span>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="gmail-btn" onclick="openGmail()">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Gmail</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="navbar" aria-label="Main Navigation">
+            <ul class="nav-menu">
+                <li class="active"><a href="index.html">HOME</a></li>
+                <li><a href="./Pages/LCBA.html">ABOUT LCBA</a></li>
+                <li><a href="./Pages/ABM.html">ABOUT ABM</a></li>
+                <li><a href="./Pages/image.html">IMAGE GALLERY</a></li>
+                <li><a href="./Pages/Video.html">VIDEO GALLERY</a></li>
+                <li><a href="./Game/Game.html">GAMES</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+        <section class="welcome-section">
+            <div class="welcome-container">
+                <h1>Welcome to Laguna College of Business and Arts</h1>
+                <p style="text-align: justify;">
+                    LCBA, for 9 decades, has provided quality education to the youth and adults of Calamba City and beyond.
+                    Through the years, it has embraced the changes in the educational system and innovated accordingly.
+                    Inspired by the principles of Dr. Jose P. Rizal, it has transformed many lives and still continues up to the present.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="lcba-footer">
+        <div class="footer-content">
+            <p>© 2026 LAGUNA COLLEGE OF BUSINESS AND ARTS</p>
+            <p class="powered">
+                Powered By: <span>Dice Delle Andrei C. Alvarez & John Ronelle R. Punzalan</span>
+            </p>
+            <br>
+            <p class="powered">Smart: <span>0961-074-5530</span></p>
+            <p class="powered">Gmail: <span>info@lcba.edu.ph</span></p>
+            <p class="powered">Address: <span>P.Burgos St., Calamba City, Laguna, 4027</span></p>
+        </div>
+        </div>
+    </footer>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script>
+        function callNumber() {
+            window.location.href = "tel:09610745530";
+        }
+
+        function sendEmail() {
+            window.location.href = "mailto:info@lcba.edu.ph";
+        }
+
+        function openGmail() {
+            window.open("https://mail.google.com", "_blank");
+        }
+    </script>
+
+</body>
+</html>
