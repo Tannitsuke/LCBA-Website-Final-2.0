@@ -129,7 +129,7 @@ body {
 
 .abm-page .hero {
   height: 220px;
-  background: url("./Assets/Images/Header.png") center center / contain no-repeat;
+  background: url("./Assets/Images/Header.png") center center / cover no-repeat;
 }
 
 /* =========================
@@ -1064,4 +1064,5 @@ GLOBAL RESPONSIVE DESIGN
   }
 
 }
+
 
